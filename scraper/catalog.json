@@ -1,0 +1,769 @@
+{
+  "$comment": "Match rules mapping our generic catalog items to real store products. `include` terms must all appear in the product name, every `any` group needs at least one hit, `exclude` disqualifies outright, and `size` is compared numerically (see src/lib/normalize.mjs).",
+  "items": [
+    {
+      "id": "white-bread-700g",
+      "size": "700g",
+      "include": [
+        "bread"
+      ],
+      "any": [
+        [
+          "white"
+        ]
+      ],
+      "exclude": [
+        "brown",
+        "whole wheat",
+        "wholewheat",
+        "rye",
+        "low gi",
+        "seed",
+        "crisps",
+        "crumbs",
+        "rolls",
+        "pita",
+        "garlic"
+      ]
+    },
+    {
+      "id": "brown-bread-700g",
+      "size": "700g",
+      "include": [
+        "bread"
+      ],
+      "any": [
+        [
+          "brown"
+        ]
+      ],
+      "exclude": [
+        "white",
+        "rye",
+        "seed",
+        "low gi",
+        "crisps",
+        "crumbs",
+        "rolls",
+        "pita",
+        "garlic"
+      ]
+    },
+    {
+      "id": "full-cream-milk-1l",
+      "size": "1l",
+      "include": [
+        "milk"
+      ],
+      "any": [
+        [
+          "full cream"
+        ]
+      ],
+      "exclude": [
+        "low fat",
+        "fat free",
+        "skim",
+        "powder",
+        "condensed",
+        "evaporated",
+        "flavoured",
+        "chocolate",
+        "uht sachet",
+        "goat",
+        "almond",
+        "soya",
+        "oat",
+        "lactose"
+      ],
+      "noMultipack": true
+    },
+    {
+      "id": "low-fat-milk-2l",
+      "size": "2l",
+      "include": [
+        "milk"
+      ],
+      "any": [
+        [
+          "low fat",
+          "lowfat",
+          "2% fat"
+        ]
+      ],
+      "exclude": [
+        "full cream",
+        "fat free",
+        "powder",
+        "condensed",
+        "evaporated",
+        "flavoured",
+        "chocolate",
+        "goat",
+        "almond",
+        "soya",
+        "oat"
+      ],
+      "noMultipack": true
+    },
+    {
+      "id": "eggs-large-18",
+      "size": "18 pack",
+      "include": [
+        "eggs"
+      ],
+      "exclude": [
+        "chocolate",
+        "easter",
+        "quail",
+        "liquid",
+        "white only",
+        "scotch"
+      ]
+    },
+    {
+      "id": "cheddar-cheese-400g",
+      "size": "400g",
+      "include": [
+        "cheddar"
+      ],
+      "exclude": [
+        "slices",
+        "sliced",
+        "grated",
+        "shredded",
+        "spread",
+        "popcorn",
+        "crisps",
+        "sauce",
+        "flavoured"
+      ]
+    },
+    {
+      "id": "butter-500g",
+      "size": "500g",
+      "include": [
+        "butter"
+      ],
+      "exclude": [
+        "peanut",
+        "spread",
+        "margarine",
+        "garlic",
+        "shea",
+        "cocoa",
+        "nut butter",
+        "almond"
+      ]
+    },
+    {
+      "id": "yoghurt-1kg",
+      "size": "1kg",
+      "include": [
+        "yoghurt"
+      ],
+      "any": [
+        [
+          "plain",
+          "natural",
+          "double cream",
+          "low fat"
+        ]
+      ],
+      "exclude": [
+        "drinking",
+        "granola",
+        "kids",
+        "flavoured",
+        "strawberry",
+        "vanilla",
+        "fruit"
+      ]
+    },
+    {
+      "id": "chicken-portions-2kg",
+      "size": "2kg",
+      "include": [
+        "chicken"
+      ],
+      "any": [
+        [
+          "portions",
+          "braai pack",
+          "mixed portions",
+          "iqf"
+        ]
+      ],
+      "exclude": [
+        "cat",
+        "cat food",
+        "crumbed",
+        "dog",
+        "dog food",
+        "feet",
+        "gizzards",
+        "kitten",
+        "livers",
+        "nuggets",
+        "pet",
+        "polony",
+        "puppy",
+        "spice",
+        "stock",
+        "viennas"
+      ]
+    },
+    {
+      "id": "beef-mince-1kg",
+      "size": "1kg",
+      "include": [
+        "mince"
+      ],
+      "any": [
+        [
+          "beef",
+          "lean"
+        ]
+      ],
+      "exclude": [
+        "burger",
+        "cat",
+        "cat food",
+        "chicken",
+        "dog",
+        "dog food",
+        "kitten",
+        "lamb",
+        "meatballs",
+        "pet",
+        "pork",
+        "puppy",
+        "soya",
+        "vegetarian"
+      ]
+    },
+    {
+      "id": "pork-sausages-400g",
+      "size": "400g",
+      "include": [
+        "sausages"
+      ],
+      "any": [
+        [
+          "pork",
+          "bangers"
+        ]
+      ],
+      "exclude": [
+        "beef",
+        "boerewors",
+        "cat",
+        "cat food",
+        "chicken",
+        "dog",
+        "dog food",
+        "dried",
+        "kitten",
+        "pet",
+        "puppy",
+        "russian",
+        "vienna"
+      ]
+    },
+    {
+      "id": "bananas-1kg",
+      "size": "1kg",
+      "include": [
+        "bananas"
+      ],
+      "exclude": [
+        "dried",
+        "chips",
+        "bread",
+        "flavoured",
+        "baby"
+      ]
+    },
+    {
+      "id": "apples-1kg",
+      "size": "1kg",
+      "include": [
+        "apples"
+      ],
+      "exclude": [
+        "dried",
+        "juice",
+        "sauce",
+        "pie",
+        "crumble",
+        "cider",
+        "flavoured"
+      ]
+    },
+    {
+      "id": "potatoes-2kg",
+      "size": "2kg",
+      "include": [
+        "potatoes"
+      ],
+      "exclude": [
+        "sweet",
+        "chips",
+        "crisps",
+        "frozen",
+        "wedges",
+        "mash",
+        "baby",
+        "salad"
+      ]
+    },
+    {
+      "id": "onions-1kg",
+      "size": "1kg",
+      "include": [
+        "onions"
+      ],
+      "exclude": [
+        "spring",
+        "pickled",
+        "rings",
+        "soup",
+        "flavoured",
+        "red",
+        "baby",
+        "frozen"
+      ]
+    },
+    {
+      "id": "tomatoes-1kg",
+      "size": "1kg",
+      "include": [
+        "tomatoes"
+      ],
+      "exclude": [
+        "tinned",
+        "canned",
+        "chopped",
+        "paste",
+        "puree",
+        "sauce",
+        "sun dried",
+        "cocktail",
+        "cherry",
+        "rosa"
+      ]
+    },
+    {
+      "id": "rice-2kg",
+      "size": "2kg",
+      "include": [
+        "rice"
+      ],
+      "any": [
+        [
+          "white",
+          "long grain",
+          "parboiled"
+        ]
+      ],
+      "exclude": [
+        "basmati",
+        "brown",
+        "cakes",
+        "cat",
+        "cat food",
+        "dog",
+        "dog food",
+        "jasmine",
+        "kitten",
+        "krispies",
+        "pet",
+        "pudding",
+        "puppy",
+        "risotto",
+        "wild"
+      ]
+    },
+    {
+      "id": "cake-flour-2-5kg",
+      "size": "2.5kg",
+      "include": [
+        "flour"
+      ],
+      "any": [
+        [
+          "cake",
+          "white"
+        ]
+      ],
+      "exclude": [
+        "almond",
+        "bread",
+        "bread flour",
+        "brown",
+        "coconut",
+        "corn",
+        "self raising",
+        "whole wheat"
+      ]
+    },
+    {
+      "id": "sugar-2kg",
+      "size": "2kg",
+      "include": [
+        "sugar"
+      ],
+      "any": [
+        [
+          "white",
+          "granulated"
+        ]
+      ],
+      "exclude": [
+        "brown",
+        "castor",
+        "icing",
+        "demerara",
+        "treacle",
+        "free",
+        "substitute",
+        "sweetener"
+      ]
+    },
+    {
+      "id": "sunflower-oil-750ml",
+      "size": "750ml",
+      "include": [
+        "sunflower oil"
+      ],
+      "exclude": [
+        "olive",
+        "canola",
+        "spray",
+        "seeds",
+        "blend"
+      ],
+      "noMultipack": true
+    },
+    {
+      "id": "salt-500g",
+      "size": "500g",
+      "include": [
+        "salt"
+      ],
+      "any": [
+        [
+          "table",
+          "fine",
+          "iodated",
+          "iodised"
+        ]
+      ],
+      "exclude": [
+        "sea salt flakes",
+        "rock",
+        "epsom",
+        "bath",
+        "garlic salt",
+        "celery",
+        "seasoning",
+        "popcorn"
+      ]
+    },
+    {
+      "id": "spaghetti-500g",
+      "size": "500g",
+      "include": [
+        "spaghetti"
+      ],
+      "exclude": [
+        "tinned",
+        "canned",
+        "bolognaise",
+        "sauce",
+        "whole wheat",
+        "gluten free"
+      ]
+    },
+    {
+      "id": "peanut-butter-400g",
+      "size": "400g",
+      "include": [
+        "peanut butter"
+      ],
+      "exclude": [
+        "chocolate",
+        "biscuits",
+        "cups",
+        "flavoured",
+        "ice cream"
+      ]
+    },
+    {
+      "id": "baked-beans-410g",
+      "size": "410g",
+      "include": [
+        "baked beans"
+      ],
+      "exclude": [
+        "curry",
+        "chilli",
+        "barbecue",
+        "sausages"
+      ]
+    },
+    {
+      "id": "tinned-tomatoes-410g",
+      "size": "410g",
+      "include": [
+        "tomatoes"
+      ],
+      "any": [
+        [
+          "chopped",
+          "diced",
+          "whole peeled"
+        ]
+      ],
+      "exclude": [
+        "paste",
+        "puree",
+        "onion mix",
+        "fresh",
+        "sun dried"
+      ]
+    },
+    {
+      "id": "rooibos-tea-80s",
+      "size": "80 pack",
+      "include": [
+        "rooibos"
+      ],
+      "any": [
+        [
+          "tagless",
+          "tea bags",
+          "teabags",
+          "tea"
+        ]
+      ],
+      "exclude": [
+        "flavoured",
+        "vanilla",
+        "espresso",
+        "latte",
+        "iced",
+        "loose"
+      ]
+    },
+    {
+      "id": "instant-coffee-200g",
+      "size": "200g",
+      "include": [
+        "coffee"
+      ],
+      "any": [
+        [
+          "instant",
+          "granules"
+        ]
+      ],
+      "exclude": [
+        "beans",
+        "ground",
+        "filter",
+        "capsules",
+        "pods",
+        "decaf",
+        "mixture",
+        "creamer",
+        "3 in 1"
+      ]
+    },
+    {
+      "id": "cola-2l",
+      "size": "2l",
+      "include": [
+        "coca cola"
+      ],
+      "exclude": [
+        "zero",
+        "light",
+        "diet",
+        "vanilla",
+        "cherry",
+        "no sugar",
+        "creations",
+        "limited edition"
+      ],
+      "noMultipack": true
+    },
+    {
+      "id": "still-water-5l",
+      "size": "5l",
+      "include": [
+        "water"
+      ],
+      "any": [
+        [
+          "still",
+          "natural spring",
+          "purified"
+        ]
+      ],
+      "exclude": [
+        "sparkling",
+        "flavoured",
+        "rose",
+        "coconut",
+        "tonic",
+        "micellar"
+      ],
+      "noMultipack": true
+    },
+    {
+      "id": "fruit-juice-1l",
+      "size": "1l",
+      "include": [
+        "juice"
+      ],
+      "exclude": [
+        "aloe",
+        "concentrate",
+        "cordial",
+        "fresh",
+        "lemon juice",
+        "lime",
+        "smoothie",
+        "sparkling",
+        "squash",
+        "tomato",
+        "vinegar"
+      ],
+      "noMultipack": true
+    },
+    {
+      "id": "toilet-paper-9pk",
+      "size": "9 pack",
+      "include": [
+        "toilet"
+      ],
+      "any": [
+        [
+          "paper",
+          "tissue",
+          "rolls"
+        ]
+      ],
+      "exclude": [
+        "wipes",
+        "seat",
+        "cleaner",
+        "freshener",
+        "brush"
+      ]
+    },
+    {
+      "id": "dishwashing-liquid-750ml",
+      "size": "750ml",
+      "include": [
+        "dishwashing liquid"
+      ],
+      "exclude": [
+        "refill",
+        "tablets",
+        "machine",
+        "rinse aid",
+        "powder",
+        "gel caps",
+        "dishwasher"
+      ]
+    },
+    {
+      "id": "washing-powder-2kg",
+      "size": "2kg",
+      "include": [
+        "washing powder"
+      ],
+      "exclude": [
+        "liquid",
+        "capsules",
+        "pods",
+        "fabric softener",
+        "hand wash",
+        "dishwash"
+      ]
+    },
+    {
+      "id": "bar-soap-3pk",
+      "size": "450g",
+      "include": [
+        "soap"
+      ],
+      "any": [
+        [
+          "bath",
+          "bar",
+          "beauty"
+        ]
+      ],
+      "exclude": [
+        "laundry",
+        "liquid",
+        "hand wash",
+        "dish",
+        "powder",
+        "shampoo",
+        "refill",
+        "body wash",
+        "shower gel",
+        "tissue oil",
+        "scrub"
+      ]
+    },
+    {
+      "id": "potato-chips-125g",
+      "size": "125g",
+      "include": [
+        "chips"
+      ],
+      "exclude": [
+        "banana",
+        "beef",
+        "biltong",
+        "chocolate",
+        "corn",
+        "fish",
+        "frozen",
+        "maize",
+        "oven",
+        "tortilla",
+        "veg",
+        "vegetable",
+        "wood"
+      ],
+      "noMultipack": true
+    },
+    {
+      "id": "sweet-biscuits-200g",
+      "size": "200g",
+      "include": [
+        "biscuits"
+      ],
+      "exclude": [
+        "bread",
+        "cat",
+        "cat food",
+        "cracker",
+        "crackers",
+        "dog",
+        "dog food",
+        "kitten",
+        "pet",
+        "puppy",
+        "savoury"
+      ],
+      "noMultipack": true
+    }
+  ]
+}
