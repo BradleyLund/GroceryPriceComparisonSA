@@ -10,6 +10,10 @@ npm run scrape -- --dry-run           # scrape and report, write nothing
 npm run scrape -- --help
 ```
 
+Runs **merge**: scraping one store keeps the prices already recorded for the
+others, so you can refresh a single retailer or retry one that failed without
+losing the rest. `--replace` discards them instead.
+
 The browser-backed stores need Playwright, which is optional:
 
 ```bash
@@ -69,8 +73,21 @@ skipped per-adapter:
 - **Retries** use exponential backoff, and 4xx responses fail fast rather than
   hammering.
 
-Running inside PnP's visit window is enforced by default; `--ignore-visit-time`
-overrides it, which you should use sparingly.
+### Pick n Pay's visit window
+
+PnP is the awkward one. Its robots.txt declares `Visit-time: 0400-0845` (UTC,
+so 06:00–10:45 SAST), and the scraper enforces that by default — outside the
+window a PnP run stops immediately with the time until it reopens. Combined
+with its 10-second crawl delay, a full PnP pass takes a while, so in practice:
+
+```bash
+# inside the window, fewer candidates per item
+npm run scrape -- --stores=pnp --candidates=3
+```
+
+`--ignore-visit-time` overrides the window if you need prices outside it. The
+10s crawl delay still applies, and that's the directive that actually protects
+the retailer, so leave it alone.
 
 ### A note on the user agent
 

@@ -60,6 +60,10 @@ npm install --save-dev playwright && npx playwright install chromium  # for PnP 
 npm run scrape -- --stores=shoprite,checkers                          # or skip them
 ```
 
+Runs merge, so you can refresh one retailer at a time without losing the
+others. Note Pick n Pay's robots.txt only permits crawling between 04:00 and
+08:45 UTC; the scraper enforces that by default.
+
 The scraper parses and obeys each retailer's `robots.txt` (including Pick n
 Pay's crawl delay and visit window), never uses site search, rate-limits per
 host, and caches responses locally. A store it can't price gets `null` rather

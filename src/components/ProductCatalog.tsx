@@ -93,7 +93,7 @@ export function ProductCatalog({
                       <p className="truncate text-sm font-medium">{product.name}</p>
                       <p className="text-xs text-neutral-500">
                         {product.unit}
-                        {best && (
+                        {best ? (
                           <>
                             {' · from '}
                             <span className="font-semibold text-green-700 dark:text-green-500">
@@ -101,6 +101,12 @@ export function ProductCatalog({
                             </span>
                             {` at ${best.store.name}`}
                           </>
+                        ) : (
+                          // Without this the row looks like any other, and
+                          // adding it quietly makes every store uncomparable.
+                          <span className="text-amber-600 dark:text-amber-500">
+                            {' · no price data'}
+                          </span>
                         )}
                       </p>
                     </div>
