@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { PRICE_SOURCES } from '../data/catalog'
 import { STORES } from '../data/stores'
 import type { BasketItem, Product } from '../types'
 import { cheapestFor, formatZAR } from '../utils/compare'
@@ -57,6 +58,7 @@ export function PriceBreakdownTable({ basket, products }: PriceBreakdownTablePro
                     {STORES.map((store) => {
                       const price = product.prices[store.id]
                       const isBest = best && store.id === best.store.id
+                      const source = PRICE_SOURCES[product.id]?.[store.id]
                       return (
                         <td
                           key={store.id}
@@ -66,7 +68,23 @@ export function PriceBreakdownTable({ basket, products }: PriceBreakdownTablePro
                               : 'text-neutral-600 dark:text-neutral-300'
                           }`}
                         >
-                          {price == null ? '—' : formatZAR(price)}
+                          {price == null ? (
+                            '—'
+                          ) : source ? (
+                            // Show exactly which real product was priced — a
+                            // generic "Bananas 1kg" row may be a 1.2kg pack.
+                            <a
+                              href={source.url}
+                              target="_blank"
+                              rel="noreferrer noopener"
+                              title={source.name}
+                              className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
+                            >
+                              {formatZAR(price)}
+                            </a>
+                          ) : (
+                            formatZAR(price)
+                          )}
                         </td>
                       )
                     })}
