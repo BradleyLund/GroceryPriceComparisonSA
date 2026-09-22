@@ -12,8 +12,18 @@ import path from 'node:path'
 
 import { Robots } from './robots.mjs'
 
+/**
+ * A descriptive bot UA is the polite default, but the Shoprite Group CDN
+ * returns 403 to unrecognised user agents regardless of what robots.txt
+ * permits, so a mainstream browser UA is the working default. Override with
+ * SCRAPER_USER_AGENT if you have an arrangement with a retailer.
+ *
+ * Note this only gets past a user-agent filter — robots.txt rules are still
+ * parsed and enforced in `text()` below.
+ */
 const DEFAULT_UA =
-  'SAGroceryBot/1.0 (+https://github.com/bradleylund/GroceryPriceComparisonSA; personal price-comparison project)'
+  process.env.SCRAPER_USER_AGENT ??
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 

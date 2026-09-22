@@ -2,7 +2,8 @@ import { BasketPanel } from './components/BasketPanel'
 import { ComparisonPanel } from './components/ComparisonPanel'
 import { PriceBreakdownTable } from './components/PriceBreakdownTable'
 import { ProductCatalog } from './components/ProductCatalog'
-import { PRODUCTS } from './data/products'
+import { DataProvenanceBanner } from './components/DataProvenanceBanner'
+import { PRODUCTS } from './data/catalog'
 import { useBasket } from './hooks/useBasket'
 
 function App() {
@@ -20,10 +21,7 @@ function App() {
       </header>
 
       <main className="mx-auto max-w-6xl px-4 py-6">
-        <div className="mb-3 rounded-lg border border-amber-300 bg-amber-50 px-4 py-2 text-xs text-amber-800 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-300">
-          Prices are illustrative sample data for demo purposes, not a live price feed — actual
-          in-store and online prices vary and change. See the README for how to plug in real data.
-        </div>
+        <DataProvenanceBanner />
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           <section className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900 lg:col-span-2 lg:h-[70vh]">
