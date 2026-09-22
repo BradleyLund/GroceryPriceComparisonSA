@@ -141,6 +141,8 @@ export const woolworths = {
 
     /** Pool of every product seen across the visited grids. */
     const pool = []
+    let failures = 0
+    let lastError = null
     for (const url of chosen.keys()) {
       try {
         const rows = await browser.evaluateOnPage(url, {
@@ -160,10 +162,19 @@ export const woolworths = {
         }
         log.info(`    ${added.toString().padStart(3)} products — ${url.split('/browse/')[1] ?? url}`)
       } catch (err) {
+        failures += 1
+        lastError = err
         log.warn(`  category failed: ${url} — ${err.message}`)
       }
     }
-    log.info(`  ${pool.length} products pooled`)
+
+    // If every page errored, the store didn't "have no products" — something
+    // broke (typically the browser failing to launch). Throwing marks the
+    // store as failed so its existing prices are kept rather than nulled.
+    if (failures === chosen.size && chosen.size > 0) {
+      throw new Error(`all ${failures} category pages failed — last error: ${lastError?.message}`)
+    }
+    log.info(`  ${pool.length} products pooled${failures ? ` (${failures} page(s) failed)` : ''}`)
 
     // Every item matches against the whole pool; the matcher does the filtering.
     const byItem = new Map()

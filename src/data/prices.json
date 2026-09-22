@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-22T12:46:16.908Z",
+  "generatedAt": "2026-09-22T12:51:14.702Z",
   "currency": "ZAR",
   "storesScraped": [
     "shoprite",
@@ -9,21 +9,21 @@
   "storeReports": {
     "shoprite": {
       "status": "ok",
-      "matched": 31,
+      "matched": 29,
       "total": 36,
-      "durationSec": 62
+      "durationSec": 63
     },
     "checkers": {
       "status": "ok",
-      "matched": 33,
+      "matched": 32,
       "total": 36,
       "durationSec": 91
     },
     "woolworths": {
       "status": "ok",
-      "matched": 32,
+      "matched": 0,
       "total": 36,
-      "durationSec": 798
+      "durationSec": 40
     }
   },
   "items": [
@@ -32,7 +32,7 @@
       "prices": {
         "shoprite": 19.99,
         "checkers": 17.99,
-        "woolworths": 33.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -42,10 +42,6 @@
         "checkers": {
           "name": "The Bakery White Bread 700g",
           "url": "https://www.checkers.co.za/product/the-bakery-white-bread-700g-10885697EA"
-        },
-        "woolworths": {
-          "name": "White Bread 700 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/bakery/bread-rolls/bread/white-bread"
         }
       }
     },
@@ -54,7 +50,7 @@
       "prices": {
         "shoprite": 16.99,
         "checkers": 15.99,
-        "woolworths": 19.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -64,10 +60,6 @@
         "checkers": {
           "name": "The Bakery Brown Bread 700g",
           "url": "https://www.checkers.co.za/product/the-bakery-brown-bread-700g-10885550EA"
-        },
-        "woolworths": {
-          "name": "Thick Slice Brown Bread 700 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/bakery/bread-rolls"
         }
       }
     },
@@ -76,7 +68,7 @@
       "prices": {
         "shoprite": 16.99,
         "checkers": 21.99,
-        "woolworths": 22.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -86,10 +78,6 @@
         "checkers": {
           "name": "Clover Full Cream Milk 1L",
           "url": "https://www.checkers.co.za/product/clover-full-cream-milk-1l-10392555EA"
-        },
-        "woolworths": {
-          "name": "Long Life Full Cream Milk 1 L",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/pantry/long-life-milk-dairy-alternatives"
         }
       }
     },
@@ -98,30 +86,21 @@
       "prices": {
         "shoprite": null,
         "checkers": null,
-        "woolworths": 54.99
+        "woolworths": null
       },
-      "sources": {
-        "woolworths": {
-          "name": "Fresh Low Fat Organic Milk 2 L",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/wellbeing-plant-based/organic/organic-milk-dairy-eggs"
-        }
-      }
+      "sources": {}
     },
     {
       "id": "eggs-large-18",
       "prices": {
         "shoprite": null,
         "checkers": 59.99,
-        "woolworths": 91.99
+        "woolworths": null
       },
       "sources": {
         "checkers": {
           "name": "Nulaid Large Eggs 18 Pack",
           "url": "https://www.checkers.co.za/product/nulaid-large-eggs-18-pack-10125869EA"
-        },
-        "woolworths": {
-          "name": "Free Range Large Chilled Eggs 18 pk",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/milk-dairy-eggs"
         }
       }
     },
@@ -130,16 +109,12 @@
       "prices": {
         "shoprite": null,
         "checkers": 99.99,
-        "woolworths": 99.99
+        "woolworths": null
       },
       "sources": {
         "checkers": {
           "name": "Ladismith Full Fat Cheddar Cheese 400g",
           "url": "https://www.checkers.co.za/product/ladismith-full-fat-cheddar-cheese-400g-10518568EA"
-        },
-        "woolworths": {
-          "name": "Mild Cheddar Cheese 400 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/milk-dairy-eggs/cheese/cheddar-gouda-cheese"
         }
       }
     },
@@ -148,7 +123,7 @@
       "prices": {
         "shoprite": 79.99,
         "checkers": 84.99,
-        "woolworths": 104.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -158,10 +133,6 @@
         "checkers": {
           "name": "Darling Salted Butter 500g",
           "url": "https://www.checkers.co.za/product/darling-salted-butter-500g-10892908EA"
-        },
-        "woolworths": {
-          "name": "Salted Butter 500 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/milk-dairy-eggs/butter-margarine"
         }
       }
     },
@@ -170,7 +141,7 @@
       "prices": {
         "shoprite": 34.99,
         "checkers": 39.99,
-        "woolworths": 57.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -180,10 +151,6 @@
         "checkers": {
           "name": "Darling Plain Low Fat Yoghurt 1kg",
           "url": "https://www.checkers.co.za/product/darling-plain-low-fat-yoghurt-1kg-10701038EA"
-        },
-        "woolworths": {
-          "name": "Double Cream Plain Yoghurt 1 kg",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/milk-dairy-eggs"
         }
       }
     },
@@ -210,7 +177,7 @@
       "prices": {
         "shoprite": 109.99,
         "checkers": 129.99,
-        "woolworths": 139.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -220,10 +187,6 @@
         "checkers": {
           "name": "Lean Beef Mince Per KG",
           "url": "https://www.checkers.co.za/product/lean-beef-mince-per-kg-10888491KG"
-        },
-        "woolworths": {
-          "name": "Regular Beef Mince 1 kg",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/meat-poultry-fish/mince-frikkadels"
         }
       }
     },
@@ -244,31 +207,18 @@
     {
       "id": "bananas-1kg",
       "prices": {
-        "shoprite": 39.99,
-        "checkers": 39.99,
-        "woolworths": 36.99
+        "shoprite": null,
+        "checkers": null,
+        "woolworths": null
       },
-      "sources": {
-        "shoprite": {
-          "name": "Bananas 1.2kg ",
-          "url": "https://www.shoprite.co.za/product/bananas-1-2kg-10147193EA"
-        },
-        "checkers": {
-          "name": "Bananas 1.2kg ",
-          "url": "https://www.checkers.co.za/product/bananas-1-2kg-10147193EA"
-        },
-        "woolworths": {
-          "name": "Large Bananas Min 950 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/fruit-vegetables-salads/fresh-fruit/bananas"
-        }
-      }
+      "sources": {}
     },
     {
       "id": "apples-1kg",
       "prices": {
         "shoprite": 19.99,
         "checkers": 32.99,
-        "woolworths": 36.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -278,10 +228,6 @@
         "checkers": {
           "name": "Pink Lady™ Apples 1kg",
           "url": "https://www.checkers.co.za/product/pink-lady-apples-1kg-10627156EA"
-        },
-        "woolworths": {
-          "name": "Pink Lady® Apples 1 kg",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/fruit-vegetables-salads/fresh-fruit/apples-pears"
         }
       }
     },
@@ -290,7 +236,7 @@
       "prices": {
         "shoprite": 29.99,
         "checkers": 49.99,
-        "woolworths": 45.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -300,10 +246,6 @@
         "checkers": {
           "name": "Boil & Roast Potatoes 2kg",
           "url": "https://www.checkers.co.za/product/boil-and-roast-potatoes-2kg-10151278EA"
-        },
-        "woolworths": {
-          "name": "Medium Potatoes 2 kg",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/fruit-vegetables-salads/fresh-vegetables/potatoes-sweet-potatoes"
         }
       }
     },
@@ -312,7 +254,7 @@
       "prices": {
         "shoprite": 29.99,
         "checkers": 29.99,
-        "woolworths": 42.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -322,10 +264,6 @@
         "checkers": {
           "name": "Pickle Onions 1kg",
           "url": "https://www.checkers.co.za/product/pickle-onions-1kg-10135702EA"
-        },
-        "woolworths": {
-          "name": "Brown Onions 1 kg",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/food-basket/banners/everyday-wlist-dinner-solutions/baked-loaded-potatoes"
         }
       }
     },
@@ -334,7 +272,7 @@
       "prices": {
         "shoprite": 19.99,
         "checkers": 21.99,
-        "woolworths": 31.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -344,10 +282,6 @@
         "checkers": {
           "name": "Tomatoes 1kg",
           "url": "https://www.checkers.co.za/product/tomatoes-1kg-10145422EA"
-        },
-        "woolworths": {
-          "name": "Salad Tomatoes 1 kg",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/flavours-of-the-world/italian/tomatoes"
         }
       }
     },
@@ -356,7 +290,7 @@
       "prices": {
         "shoprite": 39.99,
         "checkers": 29.99,
-        "woolworths": 42.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -366,10 +300,6 @@
         "checkers": {
           "name": "Allsome Long Grain Parboiled Rice 2kg",
           "url": "https://www.checkers.co.za/product/allsome-long-grain-parboiled-rice-2kg-10453681EA"
-        },
-        "woolworths": {
-          "name": "Tastic Parboiled Rice 2 kg",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/pantry/pasta-rice-noodles"
         }
       }
     },
@@ -378,7 +308,7 @@
       "prices": {
         "shoprite": 39.99,
         "checkers": 29.99,
-        "woolworths": 41.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -388,32 +318,20 @@
         "checkers": {
           "name": "SASKO Cake Wheat Flour Bag 2.5kg",
           "url": "https://www.checkers.co.za/product/sasko-cake-wheat-flour-bag-2-5kg-10137552EA"
-        },
-        "woolworths": {
-          "name": "Cake Wheat Flour 2.5 kg",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/pantry/sugar-flour-baking/flours"
         }
       }
     },
     {
       "id": "sugar-2kg",
       "prices": {
-        "shoprite": 72.99,
+        "shoprite": null,
         "checkers": 49.99,
-        "woolworths": 65.99
+        "woolworths": null
       },
       "sources": {
-        "shoprite": {
-          "name": "Selati Pure White Sugar Bag 2.5kg",
-          "url": "https://www.shoprite.co.za/product/selati-pure-white-sugar-bag-2-5kg-10141800EA"
-        },
         "checkers": {
           "name": "Sugarfields White Sugar 2kg",
           "url": "https://www.checkers.co.za/product/sugarfields-white-sugar-2kg-10410011EA"
-        },
-        "woolworths": {
-          "name": "White Sugar 2.5 kg",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/pantry/sugar-flour-baking"
         }
       }
     },
@@ -422,16 +340,12 @@
       "prices": {
         "shoprite": 39.99,
         "checkers": null,
-        "woolworths": 36.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
           "name": "Excella Sunflower Oil 750ml",
           "url": "https://www.shoprite.co.za/product/excella-sunflower-oil-750ml-10129148EA"
-        },
-        "woolworths": {
-          "name": "Sunflower Oil 750 ml",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/pantry/oils-vinegars/oils/cooking-oils"
         }
       }
     },
@@ -439,21 +353,17 @@
       "id": "salt-500g",
       "prices": {
         "shoprite": 12.99,
-        "checkers": 32.99,
-        "woolworths": 36.99
+        "checkers": 12.99,
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
-          "name": "Buffalo Fine Sea Salt 500g",
-          "url": "https://www.shoprite.co.za/product/buffalo-fine-sea-salt-500g-10140897EA"
+          "name": "Cerebos Iodated Table Salt 500g",
+          "url": "https://www.shoprite.co.za/product/cerebos-iodated-table-salt-500g-10147154EA"
         },
         "checkers": {
           "name": "Cerebos Iodated Table Salt 500g",
-          "url": "https://www.checkers.co.za/product/cerebos-iodated-table-salt-500g-10133157EA"
-        },
-        "woolworths": {
-          "name": "Cerebos Iodated Table Salt 500 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/pantry/herbs-spices/salt-pepper"
+          "url": "https://www.checkers.co.za/product/cerebos-iodated-table-salt-500g-10147154EA"
         }
       }
     },
@@ -480,7 +390,7 @@
       "prices": {
         "shoprite": 37.99,
         "checkers": 42.99,
-        "woolworths": 52.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -490,10 +400,6 @@
         "checkers": {
           "name": "Thokoman Smooth Peanut Butter 400g",
           "url": "https://www.checkers.co.za/product/thokoman-smooth-peanut-butter-400g-10644927EA"
-        },
-        "woolworths": {
-          "name": "Smooth Peanut Butter 400 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/pantry/jams-honey-spreads/nut-butters"
         }
       }
     },
@@ -502,7 +408,7 @@
       "prices": {
         "shoprite": 11.99,
         "checkers": 11.99,
-        "woolworths": 16.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -512,10 +418,6 @@
         "checkers": {
           "name": "Homegrown Baked Beans in Tomato Sauce 410g",
           "url": "https://www.checkers.co.za/product/homegrown-baked-beans-in-tomato-sauce-410g-10928244EA"
-        },
-        "woolworths": {
-          "name": "Baked Beans in Tomato Sauce 400 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/pantry/cans-jars-packaged-foods/vegetables-beans-and-legumes"
         }
       }
     },
@@ -524,7 +426,7 @@
       "prices": {
         "shoprite": 27.99,
         "checkers": 24.99,
-        "woolworths": 28.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -534,10 +436,6 @@
         "checkers": {
           "name": "Miami Indian Style Diced Tomatoes 410g",
           "url": "https://www.checkers.co.za/product/miami-indian-style-diced-tomatoes-410g-10381108EA"
-        },
-        "woolworths": {
-          "name": "Diced Tomatoes 400 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/flavours-of-the-world/italian/tomatoes"
         }
       }
     },
@@ -546,7 +444,7 @@
       "prices": {
         "shoprite": 37.99,
         "checkers": 39.99,
-        "woolworths": 52.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -556,10 +454,6 @@
         "checkers": {
           "name": "Glen Rooibos Tea Bags 80 Pack",
           "url": "https://www.checkers.co.za/product/glen-rooibos-tea-bags-80-pack-10187763EA"
-        },
-        "woolworths": {
-          "name": "Rooibos Tagless Tea Bags 80 pk",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/pantry/coffee-tea-hot-drinks/tea/rooibos-infused-teas"
         }
       }
     },
@@ -568,7 +462,7 @@
       "prices": {
         "shoprite": 149.99,
         "checkers": 144.99,
-        "woolworths": 144.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -578,10 +472,6 @@
         "checkers": {
           "name": "NESCAFÉ Classic Instant Coffee 200g",
           "url": "https://www.checkers.co.za/product/nescafe-classic-instant-coffee-200g-10395676EA"
-        },
-        "woolworths": {
-          "name": "Rich Roast Instant Coffee 200 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/pantry/coffee-tea-hot-drinks/coffee/instant-coffee"
         }
       }
     },
@@ -590,7 +480,7 @@
       "prices": {
         "shoprite": 28.99,
         "checkers": 28.99,
-        "woolworths": 28.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -600,10 +490,6 @@
         "checkers": {
           "name": "Coca-Cola Original Taste Less Sugar Soft Drink 2L",
           "url": "https://www.checkers.co.za/product/coca-cola-original-taste-less-sugar-soft-drink-2l-10136669EA"
-        },
-        "woolworths": {
-          "name": "Coca-Cola Original Soft Drink 2 L",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/beverages-juices"
         }
       }
     },
@@ -612,7 +498,7 @@
       "prices": {
         "shoprite": 31.99,
         "checkers": 24.99,
-        "woolworths": 29.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -622,10 +508,6 @@
         "checkers": {
           "name": "Thirsti Still Natural Spring Water 5L",
           "url": "https://www.checkers.co.za/product/thirsti-still-natural-spring-water-5l-10516259EA"
-        },
-        "woolworths": {
-          "name": "Still Natural Spring Water 5 L",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/beverages-juices/water-ice-blocks/still-water"
         }
       }
     },
@@ -634,7 +516,7 @@
       "prices": {
         "shoprite": 29.99,
         "checkers": 34.99,
-        "woolworths": 68.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -644,10 +526,6 @@
         "checkers": {
           "name": "Rhodes Quality 100% Apple Juice 1L",
           "url": "https://www.checkers.co.za/product/rhodes-quality-100-apple-juice-1l-10511662EA"
-        },
-        "woolworths": {
-          "name": "100 % Freshly Squeezed Orange Juice 1 L",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/beverages-juices"
         }
       }
     },
@@ -656,7 +534,7 @@
       "prices": {
         "shoprite": 49.99,
         "checkers": 69.99,
-        "woolworths": 79.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -666,10 +544,6 @@
         "checkers": {
           "name": "Checkers Housebrand 2 Ply Toilet Paper 9-Pack",
           "url": "https://www.checkers.co.za/product/checkers-housebrand-2-ply-toilet-paper-9-pack-10159234EA"
-        },
-        "woolworths": {
-          "name": "Super Soft 2 Ply Toilet Paper 9 pk",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/toiletries-health/toilet-paper-tissues-wipes"
         }
       }
     },
@@ -678,7 +552,7 @@
       "prices": {
         "shoprite": 27.99,
         "checkers": 36.99,
-        "woolworths": 36.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -688,10 +562,6 @@
         "checkers": {
           "name": "Sunlight Original Dishwashing Liquid 750ml",
           "url": "https://www.checkers.co.za/product/sunlight-original-dishwashing-liquid-750ml-10126901EA"
-        },
-        "woolworths": {
-          "name": "Sunlight Dishwashing Liquid 750 ml",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/cleaning/dishwashing/dishwashing-liquids"
         }
       }
     },
@@ -700,7 +570,7 @@
       "prices": {
         "shoprite": 64.99,
         "checkers": 62.99,
-        "woolworths": 104.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -710,10 +580,6 @@
         "checkers": {
           "name": "Surf Hand Washing Powder 2kg",
           "url": "https://www.checkers.co.za/product/surf-hand-washing-powder-2kg-10216662EA"
-        },
-        "woolworths": {
-          "name": "Omo Auto Laundry Washing Powder 2 kg",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/cleaning/washing-powder-detergents/washing-powder-detergent"
         }
       }
     },
@@ -731,7 +597,7 @@
       "prices": {
         "shoprite": 18.99,
         "checkers": 18.99,
-        "woolworths": 26.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -741,10 +607,6 @@
         "checkers": {
           "name": "Tait's Fruit Chutney Chips 125g",
           "url": "https://www.checkers.co.za/product/taits-fruit-chutney-chips-125g-10344644EA"
-        },
-        "woolworths": {
-          "name": "Lay's Salted Flavour Chips 120 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/chocolates-sweets-snacks/chips-dips"
         }
       }
     },
@@ -753,7 +615,7 @@
       "prices": {
         "shoprite": 15.99,
         "checkers": 21.99,
-        "woolworths": 29.99
+        "woolworths": null
       },
       "sources": {
         "shoprite": {
@@ -763,10 +625,6 @@
         "checkers": {
           "name": "Chelsea Coconut Biscuits 200g",
           "url": "https://www.checkers.co.za/product/chelsea-coconut-biscuits-200g-10630349EA"
-        },
-        "woolworths": {
-          "name": "Bakers Original Tennis Biscuits 200 g",
-          "url": "https://www.woolworths.co.za/browse/food-south-africa/chocolates-sweets-snacks/biscuits"
         }
       }
     }

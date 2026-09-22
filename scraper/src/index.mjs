@@ -197,8 +197,27 @@ async function main() {
   }
 
   const previousItems = new Map((existing?.items ?? []).map((i) => [i.id, i]))
-  const carriedStores = (existing?.storesScraped ?? []).filter((s) => !args.stores.includes(s))
-  const scrapedStores = [...new Set([...carriedStores, ...args.stores])]
+
+  // A store that errored out has no results to write — nulling it would throw
+  // away good prices because the browser happened to fall over. Carry its
+  // previous values instead, even under --replace.
+  const failedStores = args.stores.filter((s) => storeReports[s]?.status === 'failed')
+  const freshStores = args.stores.filter((s) => !failedStores.includes(s))
+  if (failedStores.length) {
+    const previousDataset = existing ?? (await readFile(OUTPUT_FILE, 'utf8').then(JSON.parse).catch(() => null))
+    for (const i of previousDataset?.items ?? []) {
+      if (!previousItems.has(i.id)) previousItems.set(i.id, i)
+    }
+    console.log(`Kept previous prices for failed store(s): ${failedStores.join(', ')}`)
+  }
+
+  const carriedStores = [
+    ...new Set([
+      ...(existing?.storesScraped ?? []).filter((s) => !freshStores.includes(s)),
+      ...failedStores,
+    ]),
+  ]
+  const scrapedStores = [...new Set([...carriedStores, ...freshStores])]
 
   // Every catalog item gets a row; a store with no match gets null, which the
   // UI renders as "not available" rather than a price.
@@ -211,7 +230,7 @@ async function main() {
       const priorSource = prior?.sources?.[storeId]
       if (priorSource) sources[storeId] = priorSource
     }
-    for (const storeId of args.stores) {
+    for (const storeId of freshStores) {
       const hit = results[storeId]?.[item.id]
       prices[storeId] = hit ? hit.price : null
       if (hit) sources[storeId] = { name: hit.name, url: hit.url }

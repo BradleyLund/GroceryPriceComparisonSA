@@ -99,10 +99,14 @@ export const pnp = {
     log.info(`  ${productUrls.length} product URLs discovered`)
 
     const byItem = new Map()
+    let attempted = 0
+    let failures = 0
+    let lastError = null
     for (const item of catalog.items) {
       const candidates = shortlist(productUrls, item, candidatesPerItem)
       const products = []
       for (const candidate of candidates) {
+        attempted += 1
         try {
           const data = await browser.evaluateOnPage(candidate.url, {
             waitFor: '.price, [class*="price-display"]',
@@ -112,11 +116,19 @@ export const pnp = {
           if (price == null || data.soldOut) continue
           products.push({ name: cleanName(data.name || candidate.name), price, url: candidate.url })
         } catch (err) {
+          failures += 1
+          lastError = err
           log.warn(`  ${item.id}: ${candidate.url} — ${err.message}`)
         }
       }
       log.info(`  ${item.id}: ${products.length} priced candidate(s)`)
       byItem.set(item.id, products)
+    }
+
+    // Every page erroring means something broke (usually the browser), not
+    // that the catalog is unstocked — surface it as a failure.
+    if (attempted > 0 && failures === attempted) {
+      throw new Error(`all ${failures} product pages failed — last error: ${lastError?.message}`)
     }
     return byItem
   },
