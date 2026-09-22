@@ -529,20 +529,24 @@
       "any": [
         [
           "table",
-          "fine",
           "iodated",
           "iodised"
         ]
       ],
       "exclude": [
-        "sea salt flakes",
-        "rock",
-        "epsom",
         "bath",
-        "garlic salt",
         "celery",
+        "epsom",
+        "garlic salt",
+        "himalayan",
+        "pink",
+        "popcorn",
+        "rock",
+        "sea",
+        "sea salt",
+        "sea salt flakes",
         "seasoning",
-        "popcorn"
+        "smoked"
       ],
       "categoryHints": [
         "salt",

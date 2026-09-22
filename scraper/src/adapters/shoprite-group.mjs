@@ -12,7 +12,7 @@
 
 import { extractJsonLd, findProductNode, extractSitemapLocs } from '../lib/html.mjs'
 import { matchesKeywords } from '../lib/match.mjs'
-import { normalizeText, parsePrice, parseSize } from '../lib/normalize.mjs'
+import { cleanName, normalizeText, parsePrice, parseSize } from '../lib/normalize.mjs'
 
 /** Slug -> rough product name, e.g. "sasko-white-bread-700g-10241929EA". */
 export function slugToName(url) {
@@ -101,7 +101,7 @@ export function createShopriteGroupAdapter({ id, label, origin }) {
             const availability = String(offers?.availability ?? '')
             if (/OutOfStock|SoldOut|Discontinued/i.test(availability)) continue
             products.push({
-              name: String(node.name ?? candidate.name),
+              name: cleanName(node.name ?? candidate.name),
               price,
               url: candidate.url,
               sku: node.sku ? String(node.sku) : undefined,

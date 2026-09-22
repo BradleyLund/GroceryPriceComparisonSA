@@ -10,8 +10,16 @@
 import { isMultipack, normalizeText, parseSize, sizeSimilarity } from './normalize.mjs'
 
 const MIN_SCORE = 0.55
-/** Reject a candidate whose size differs by more than ~25% from the spec. */
-const MIN_SIZE_SIMILARITY = 0.6
+/**
+ * Require the top similarity band — sizes within ~10% of each other.
+ *
+ * A looser tolerance let a 2.5kg sugar fill the 2kg slot, which makes the
+ * store holding the genuine 2kg look cheapest purely because its pack is
+ * smaller. For a comparison tool that is worse than a gap, and near-misses
+ * that are really the same shop (400g vs 410g beans, 950g vs 1kg bananas,
+ * 120g vs 125g chips) still clear this bar.
+ */
+const MIN_SIZE_SIMILARITY = 1
 
 /**
  * Word-boundary containment, so "butter" does not match "butternut" and

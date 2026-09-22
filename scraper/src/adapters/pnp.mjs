@@ -15,7 +15,7 @@
 
 import { extractSitemapLocs } from '../lib/html.mjs'
 import { matchesKeywords } from '../lib/match.mjs'
-import { normalizeText, parsePrice, parseSize } from '../lib/normalize.mjs'
+import { cleanName, normalizeText, parsePrice, parseSize } from '../lib/normalize.mjs'
 
 const ORIGIN = 'https://www.pnp.co.za'
 
@@ -110,7 +110,7 @@ export const pnp = {
           })
           const price = parsePrice(data?.priceText)
           if (price == null || data.soldOut) continue
-          products.push({ name: data.name || candidate.name, price, url: candidate.url })
+          products.push({ name: cleanName(data.name || candidate.name), price, url: candidate.url })
         } catch (err) {
           log.warn(`  ${item.id}: ${candidate.url} — ${err.message}`)
         }

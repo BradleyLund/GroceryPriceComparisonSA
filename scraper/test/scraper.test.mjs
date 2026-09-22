@@ -5,7 +5,7 @@ import test, { describe } from 'node:test'
 import { fileURLToPath } from 'node:url'
 
 import { Robots } from '../src/lib/robots.mjs'
-import { isMultipack, parsePrice, parseSize, sizeSimilarity } from '../src/lib/normalize.mjs'
+import { cleanName, isMultipack, parsePrice, parseSize, sizeSimilarity } from '../src/lib/normalize.mjs'
 import { hasPhrase, matchesKeywords, pickBest } from '../src/lib/match.mjs'
 import { extractJsonLd, findProductNode, extractSitemapLocs } from '../src/lib/html.mjs'
 import { slugToName } from '../src/adapters/shoprite-group.mjs'
@@ -159,6 +159,33 @@ describe('pickBest', () => {
 
   test('ignores products without a usable price', () => {
     assert.equal(pickBest([{ name: 'Clover Full Cream Milk 1L', price: null }], spec), null)
+  })
+
+  test('rejects a pack too far off the spec size', () => {
+    // 2.5kg in the 2kg slot makes whoever stocks the real 2kg look cheapest
+    // purely because their pack is smaller.
+    const sugar = CATALOG.items.find((i) => i.id === 'sugar-2kg')
+    assert.equal(pickBest([{ name: 'Selati White Sugar 2.5kg', price: 72.99 }], sugar), null)
+    assert.ok(pickBest([{ name: 'Sugarfields White Sugar 2kg', price: 49.99 }], sugar))
+  })
+
+  test('still accepts genuine near-misses', () => {
+    const beans = CATALOG.items.find((i) => i.id === 'baked-beans-410g')
+    assert.ok(pickBest([{ name: 'Koo Baked Beans in Tomato Sauce 400g', price: 16.99 }], beans))
+    const bananas = CATALOG.items.find((i) => i.id === 'bananas-1kg')
+    assert.ok(pickBest([{ name: 'Large Bananas Min 950 g', price: 36.99 }], bananas))
+  })
+})
+
+describe('name cleaning', () => {
+  test('strips the replacement char from mis-encoded names', () => {
+    // Some pages declare UTF-8 but emit Latin-1 bytes for "®".
+    assert.equal(cleanName('Pink Lady� Apples 1kg'), 'Pink Lady Apples 1kg')
+  })
+
+  test('collapses whitespace and tolerates nullish input', () => {
+    assert.equal(cleanName('  Milk   1 L '), 'Milk 1 L')
+    assert.equal(cleanName(null), '')
   })
 })
 

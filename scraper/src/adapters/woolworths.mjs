@@ -11,7 +11,7 @@
  */
 
 import { extractSitemapLocs } from '../lib/html.mjs'
-import { normalizeText, parsePrice } from '../lib/normalize.mjs'
+import { cleanName, normalizeText, parsePrice } from '../lib/normalize.mjs'
 
 const SITEMAP = 'https://content.woolworthsstatic.co.za/sitemap/food.xml'
 
@@ -155,7 +155,7 @@ export const woolworths = {
         for (const row of rows ?? []) {
           const price = parsePrice(row.priceText)
           if (price == null || row.soldOut) continue
-          pool.push({ name: row.name, price, url: row.url })
+          pool.push({ name: cleanName(row.name), price, url: row.url })
           added += 1
         }
         log.info(`    ${added.toString().padStart(3)} products — ${url.split('/browse/')[1] ?? url}`)

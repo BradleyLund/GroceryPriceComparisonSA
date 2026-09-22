@@ -6,6 +6,20 @@
  * shape before matching against our generic catalog.
  */
 
+/**
+ * Tidy a product name for display.
+ *
+ * Some retailer pages declare UTF-8 but emit Latin-1 bytes for symbols like
+ * "®", which decode to U+FFFD and would otherwise be stored and shown as "�"
+ * (e.g. "Pink Lady� Apples").
+ */
+export function cleanName(s) {
+  return String(s ?? '')
+    .replace(/�/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
 /** Lowercase, strip punctuation, collapse whitespace. */
 export function normalizeText(s) {
   return String(s ?? '')
