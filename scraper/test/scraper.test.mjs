@@ -9,6 +9,7 @@ import { isMultipack, parsePrice, parseSize, sizeSimilarity } from '../src/lib/n
 import { hasPhrase, matchesKeywords, pickBest } from '../src/lib/match.mjs'
 import { extractJsonLd, findProductNode, extractSitemapLocs } from '../src/lib/html.mjs'
 import { slugToName } from '../src/adapters/shoprite-group.mjs'
+import { selectCategories } from '../src/adapters/woolworths.mjs'
 
 const CATALOG = JSON.parse(
   readFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'catalog.json'), 'utf8'),
@@ -203,6 +204,35 @@ describe('shoprite slug parsing', () => {
     const name = slugToName('https://www.shoprite.co.za/product/snowflake-cake-wheat-flour-2-5kg-123EA')
     assert.match(name, /2\.5kg/)
     assert.deepEqual(parseSize(name), { kind: 'mass', amount: 2500, base: 'g' })
+  })
+})
+
+describe('woolworths category selection', () => {
+  const catalog = {
+    items: [{ id: 'sugar-2kg', include: ['sugar'], any: [['white']], categoryHints: ['sugar'] }],
+  }
+  const urls = [
+    'https://www.woolworths.co.za/browse/food-south-africa/pantry/sugar-flour-baking/sugar',
+    'https://www.woolworths.co.za/browse/food-south-africa/promotions/save-r20/sugar',
+    'https://www.woolworths.co.za/browse/food-south-africa/beverages/wine/pink-white-wine',
+  ]
+
+  test('matches on the leaf segment, not anywhere in the path', () => {
+    const chosen = selectCategories(urls, catalog, 3)
+    // "white" appears in the wine URL but only as an `any` term, which must
+    // never select a category on its own.
+    assert.equal([...chosen.keys()].some((u) => u.includes('wine')), false)
+  })
+
+  test('prefers the permanent aisle over a promotions page', () => {
+    const chosen = selectCategories(urls, catalog, 1)
+    const picked = [...chosen.keys()][0]
+    assert.match(picked, /pantry\/sugar-flour-baking\/sugar$/)
+  })
+
+  test('records which items each category serves', () => {
+    const chosen = selectCategories(urls, catalog, 1)
+    assert.deepEqual([...chosen.values()][0], new Set(['sugar-2kg']))
   })
 })
 

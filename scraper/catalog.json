@@ -24,6 +24,10 @@
         "rolls",
         "pita",
         "garlic"
+      ],
+      "categoryHints": [
+        "bread",
+        "bread-rolls"
       ]
     },
     {
@@ -47,6 +51,10 @@
         "rolls",
         "pita",
         "garlic"
+      ],
+      "categoryHints": [
+        "bread",
+        "bread-rolls"
       ]
     },
     {
@@ -76,7 +84,12 @@
         "oat",
         "lactose"
       ],
-      "noMultipack": true
+      "noMultipack": true,
+      "categoryHints": [
+        "milk",
+        "fresh-milk",
+        "long-life-milk"
+      ]
     },
     {
       "id": "low-fat-milk-2l",
@@ -104,7 +117,12 @@
         "soya",
         "oat"
       ],
-      "noMultipack": true
+      "noMultipack": true,
+      "categoryHints": [
+        "milk",
+        "fresh-milk",
+        "long-life-milk"
+      ]
     },
     {
       "id": "eggs-large-18",
@@ -119,6 +137,9 @@
         "liquid",
         "white only",
         "scotch"
+      ],
+      "categoryHints": [
+        "eggs"
       ]
     },
     {
@@ -137,6 +158,10 @@
         "crisps",
         "sauce",
         "flavoured"
+      ],
+      "categoryHints": [
+        "cheese",
+        "cheddar"
       ]
     },
     {
@@ -154,6 +179,10 @@
         "cocoa",
         "nut butter",
         "almond"
+      ],
+      "categoryHints": [
+        "butter",
+        "butter-margarine"
       ]
     },
     {
@@ -178,6 +207,9 @@
         "strawberry",
         "vanilla",
         "fruit"
+      ],
+      "categoryHints": [
+        "yoghurt"
       ]
     },
     {
@@ -211,6 +243,9 @@
         "spice",
         "stock",
         "viennas"
+      ],
+      "categoryHints": [
+        "chicken"
       ]
     },
     {
@@ -240,6 +275,10 @@
         "puppy",
         "soya",
         "vegetarian"
+      ],
+      "categoryHints": [
+        "beef",
+        "mince"
       ]
     },
     {
@@ -268,6 +307,11 @@
         "puppy",
         "russian",
         "vienna"
+      ],
+      "categoryHints": [
+        "pork",
+        "sausages",
+        "bacon-sausages"
       ]
     },
     {
@@ -282,6 +326,9 @@
         "bread",
         "flavoured",
         "baby"
+      ],
+      "categoryHints": [
+        "bananas"
       ]
     },
     {
@@ -298,6 +345,10 @@
         "crumble",
         "cider",
         "flavoured"
+      ],
+      "categoryHints": [
+        "apples",
+        "apples-pears"
       ]
     },
     {
@@ -315,6 +366,9 @@
         "mash",
         "baby",
         "salad"
+      ],
+      "categoryHints": [
+        "potatoes"
       ]
     },
     {
@@ -332,6 +386,9 @@
         "red",
         "baby",
         "frozen"
+      ],
+      "categoryHints": [
+        "onions"
       ]
     },
     {
@@ -351,6 +408,9 @@
         "cocktail",
         "cherry",
         "rosa"
+      ],
+      "categoryHints": [
+        "tomatoes"
       ]
     },
     {
@@ -382,6 +442,9 @@
         "puppy",
         "risotto",
         "wild"
+      ],
+      "categoryHints": [
+        "rice"
       ]
     },
     {
@@ -405,6 +468,10 @@
         "corn",
         "self raising",
         "whole wheat"
+      ],
+      "categoryHints": [
+        "flour",
+        "flours"
       ]
     },
     {
@@ -428,6 +495,9 @@
         "free",
         "substitute",
         "sweetener"
+      ],
+      "categoryHints": [
+        "sugar"
       ]
     },
     {
@@ -443,7 +513,12 @@
         "seeds",
         "blend"
       ],
-      "noMultipack": true
+      "noMultipack": true,
+      "categoryHints": [
+        "oil",
+        "oils",
+        "cooking-oil"
+      ]
     },
     {
       "id": "salt-500g",
@@ -468,6 +543,12 @@
         "celery",
         "seasoning",
         "popcorn"
+      ],
+      "categoryHints": [
+        "salt",
+        "salt-pepper",
+        "herbs-spices",
+        "spices"
       ]
     },
     {
@@ -483,6 +564,10 @@
         "sauce",
         "whole wheat",
         "gluten free"
+      ],
+      "categoryHints": [
+        "pasta",
+        "spaghetti"
       ]
     },
     {
@@ -497,6 +582,11 @@
         "cups",
         "flavoured",
         "ice cream"
+      ],
+      "categoryHints": [
+        "peanut-butter",
+        "spreads",
+        "jams-spreads"
       ]
     },
     {
@@ -510,6 +600,11 @@
         "chilli",
         "barbecue",
         "sausages"
+      ],
+      "categoryHints": [
+        "beans",
+        "tinned-beans",
+        "tinned-food"
       ]
     },
     {
@@ -531,6 +626,10 @@
         "onion mix",
         "fresh",
         "sun dried"
+      ],
+      "categoryHints": [
+        "tinned-tomatoes",
+        "tinned-food"
       ]
     },
     {
@@ -554,6 +653,11 @@
         "latte",
         "iced",
         "loose"
+      ],
+      "categoryHints": [
+        "tea",
+        "rooibos",
+        "tea-bags"
       ]
     },
     {
@@ -578,6 +682,10 @@
         "mixture",
         "creamer",
         "3 in 1"
+      ],
+      "categoryHints": [
+        "coffee",
+        "instant-coffee"
       ]
     },
     {
@@ -596,7 +704,13 @@
         "creations",
         "limited edition"
       ],
-      "noMultipack": true
+      "noMultipack": true,
+      "categoryHints": [
+        "soft-drinks",
+        "fizzy-drinks",
+        "cooldrinks",
+        "colas"
+      ]
     },
     {
       "id": "still-water-5l",
@@ -619,7 +733,12 @@
         "tonic",
         "micellar"
       ],
-      "noMultipack": true
+      "noMultipack": true,
+      "categoryHints": [
+        "water",
+        "still-water",
+        "bottled-water"
+      ]
     },
     {
       "id": "fruit-juice-1l",
@@ -640,7 +759,12 @@
         "tomato",
         "vinegar"
       ],
-      "noMultipack": true
+      "noMultipack": true,
+      "categoryHints": [
+        "juice",
+        "juices",
+        "fruit-juices"
+      ]
     },
     {
       "id": "toilet-paper-9pk",
@@ -661,6 +785,10 @@
         "cleaner",
         "freshener",
         "brush"
+      ],
+      "categoryHints": [
+        "toilet-paper",
+        "toilet-rolls"
       ]
     },
     {
@@ -677,6 +805,11 @@
         "powder",
         "gel caps",
         "dishwasher"
+      ],
+      "categoryHints": [
+        "dishwashing",
+        "dishwash",
+        "cleaning"
       ]
     },
     {
@@ -692,6 +825,11 @@
         "fabric softener",
         "hand wash",
         "dishwash"
+      ],
+      "categoryHints": [
+        "laundry",
+        "washing-powder",
+        "laundry-detergent"
       ]
     },
     {
@@ -719,6 +857,11 @@
         "shower gel",
         "tissue oil",
         "scrub"
+      ],
+      "categoryHints": [
+        "soap",
+        "bath-soap",
+        "bath-body"
       ]
     },
     {
@@ -742,7 +885,12 @@
         "vegetable",
         "wood"
       ],
-      "noMultipack": true
+      "noMultipack": true,
+      "categoryHints": [
+        "chips",
+        "crisps",
+        "savoury-snacks"
+      ]
     },
     {
       "id": "sweet-biscuits-200g",
@@ -763,7 +911,11 @@
         "puppy",
         "savoury"
       ],
-      "noMultipack": true
+      "noMultipack": true,
+      "categoryHints": [
+        "biscuits",
+        "sweet-biscuits"
+      ]
     }
   ]
 }

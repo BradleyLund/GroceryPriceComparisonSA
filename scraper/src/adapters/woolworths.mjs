@@ -84,19 +84,40 @@ export function selectCategories(categoryUrls, catalog, perItemLimit) {
   const chosen = new Map()
 
   for (const item of catalog.items) {
-    const terms = [
-      ...(item.categoryHints ?? []),
-      ...(item.include ?? []),
-      ...(item.any ?? []).flat(),
-    ]
+    // `include` terms identify the product; `any` terms are variant
+    // qualifiers ("white", "plain") that match unrelated aisles — "white"
+    // pulls in pink-white-wine — so they only break ties, never select.
+    const primary = [...(item.categoryHints ?? []), ...(item.include ?? [])]
+      .map((t) => normalizeText(t).replace(/\s+/g, '-'))
+      .filter((t) => t.length >= 3)
+    const secondary = (item.any ?? [])
+      .flat()
       .map((t) => normalizeText(t).replace(/\s+/g, '-'))
       .filter((t) => t.length >= 3)
 
-    const matches = categoryUrls
-      .filter((url) => terms.some((t) => url.toLowerCase().includes(t)))
-      .slice(0, perItemLimit)
+    if (!primary.length) continue
 
-    for (const url of matches) {
+    const scored = []
+    for (const url of categoryUrls) {
+      const lower = url.toLowerCase()
+      // Only the last path segment really names the aisle; matching anywhere
+      // in the path lets a parent section drag in every child category.
+      const leaf = lower.split('/').filter(Boolean).pop() ?? ''
+      if (!primary.some((t) => leaf.includes(t))) continue
+
+      let score = 0
+      score += primary.filter((t) => leaf.includes(t)).length * 2
+      score += secondary.filter((t) => lower.includes(t)).length
+      // Promotional and campaign landing pages carry a thin, rotating subset
+      // of stock; prefer the permanent aisle.
+      if (/\/(promotions|banners|food-basket)\//.test(lower)) score -= 3
+      score -= lower.split('/').length * 0.1 // prefer shallower, canonical paths
+
+      scored.push({ url, score })
+    }
+
+    scored.sort((a, b) => b.score - a.score || a.url.length - b.url.length)
+    for (const { url } of scored.slice(0, perItemLimit)) {
       if (!chosen.has(url)) chosen.set(url, new Set())
       chosen.get(url).add(item.id)
     }
