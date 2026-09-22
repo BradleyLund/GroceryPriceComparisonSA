@@ -34,6 +34,7 @@ function parseArgs(argv) {
     candidatesPerItem: 8,
     cacheTtlMs: 6 * 60 * 60 * 1000,
     ignoreVisitTime: false,
+    replace: false,
     verbose: false,
   }
   for (const arg of argv) {
@@ -42,6 +43,7 @@ function parseArgs(argv) {
     else if (arg === '--verbose') args.verbose = true
     else if (arg === '--ignore-visit-time') args.ignoreVisitTime = true
     else if (arg === '--no-cache') args.cacheTtlMs = 0
+    else if (arg === '--replace') args.replace = true
     else if (arg.startsWith('--stores=')) {
       args.stores = arg
         .slice('--stores='.length)
@@ -70,6 +72,8 @@ Usage: npm run scrape -- [options]
   --dry-run               Scrape and report, but don't write src/data/prices.json
   --headed                Run the browser stores visibly
   --no-cache              Ignore the on-disk response cache
+  --replace               Discard prices for stores not in this run
+                          (default: keep them)
   --ignore-visit-time     Skip robots.txt Visit-time enforcement (use sparingly)
   --verbose               Per-candidate logging
   -h, --help              Show this
@@ -180,13 +184,34 @@ async function main() {
       `${fetcher.stats.retries} retries, ${fetcher.stats.blocked} robots-blocked`,
   )
 
-  // Build the dataset. Every catalog item gets a row; a store with no match
-  // gets null, which the UI renders as "not available" rather than a price.
-  const scrapedStores = args.stores
+  // Scraping one store shouldn't discard another's prices, so results are
+  // merged over any existing dataset unless --replace is passed. That makes
+  // it practical to re-run a single store (or retry a failed one) on its own.
+  let existing = null
+  if (!args.replace) {
+    try {
+      existing = JSON.parse(await readFile(OUTPUT_FILE, 'utf8'))
+    } catch {
+      // No dataset yet — this run is the first.
+    }
+  }
+
+  const previousItems = new Map((existing?.items ?? []).map((i) => [i.id, i]))
+  const carriedStores = (existing?.storesScraped ?? []).filter((s) => !args.stores.includes(s))
+  const scrapedStores = [...new Set([...carriedStores, ...args.stores])]
+
+  // Every catalog item gets a row; a store with no match gets null, which the
+  // UI renders as "not available" rather than a price.
   const items = catalog.items.map((item) => {
+    const prior = previousItems.get(item.id)
     const prices = {}
     const sources = {}
-    for (const storeId of scrapedStores) {
+    for (const storeId of carriedStores) {
+      prices[storeId] = prior?.prices?.[storeId] ?? null
+      const priorSource = prior?.sources?.[storeId]
+      if (priorSource) sources[storeId] = priorSource
+    }
+    for (const storeId of args.stores) {
       const hit = results[storeId]?.[item.id]
       prices[storeId] = hit ? hit.price : null
       if (hit) sources[storeId] = { name: hit.name, url: hit.url }
@@ -198,8 +223,11 @@ async function main() {
     generatedAt: new Date().toISOString(),
     currency: 'ZAR',
     storesScraped: scrapedStores,
-    storeReports,
+    storeReports: { ...(existing?.storeReports ?? {}), ...storeReports },
     items,
+  }
+  if (carriedStores.length) {
+    console.log(`Kept existing prices for: ${carriedStores.join(', ')} (pass --replace to discard)`)
   }
 
   const totalMatched = Object.values(storeReports).reduce((n, r) => n + (r.matched ?? 0), 0)

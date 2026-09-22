@@ -73,15 +73,27 @@ export class BrowserSession {
    * Open `url`, wait for `waitFor` to appear, and run `extract` in the page.
    * @returns {Promise<any>} whatever `extract` returns
    */
-  async evaluateOnPage(url, { waitFor, extract, timeout = 45_000, settleMs = 1200 }) {
+  async evaluateOnPage(
+    url,
+    { waitFor, waitForFunction, extract, timeout = 45_000, settleMs = 1200, waitTimeout = 15_000 },
+  ) {
     await this.start()
     await this.throttle()
     const page = await this.context.newPage()
     try {
       await page.goto(url, { waitUntil: 'domcontentloaded', timeout })
-      if (waitFor) {
+      // A predicate is the better wait when the content has no stable selector
+      // to key off — waiting on a selector that can never match just burns the
+      // full timeout on every page.
+      if (waitForFunction) {
         try {
-          await page.waitForSelector(waitFor, { timeout: 15_000 })
+          await page.waitForFunction(waitForFunction, null, { timeout: waitTimeout })
+        } catch {
+          // Fall through — extract() decides whether the page was usable.
+        }
+      } else if (waitFor) {
+        try {
+          await page.waitForSelector(waitFor, { timeout: waitTimeout })
         } catch {
           // Fall through — extract() decides whether the page was usable.
         }

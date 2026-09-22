@@ -144,9 +144,12 @@ export const woolworths = {
     for (const url of chosen.keys()) {
       try {
         const rows = await browser.evaluateOnPage(url, {
-          waitFor: 'a[href*="/prod/"], a[href*="/p/"]',
+          // Tiles have no stable class or link to wait on, so wait for at
+          // least a few rendered prices instead.
+          waitForFunction: () => (document.body.innerText.match(/R\s?\d+[.,]\d{2}/g) || []).length >= 3,
           extract: extractGrid,
-          settleMs: 1800,
+          settleMs: 1200,
+          waitTimeout: 12_000,
         })
         let added = 0
         for (const row of rows ?? []) {
