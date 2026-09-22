@@ -10,6 +10,8 @@
 import { isMultipack, normalizeText, parseSize, sizeSimilarity } from './normalize.mjs'
 
 const MIN_SCORE = 0.55
+/** Reject a candidate whose size differs by more than ~25% from the spec. */
+const MIN_SIZE_SIMILARITY = 0.6
 
 /**
  * Word-boundary containment, so "butter" does not match "butternut" and
@@ -52,7 +54,9 @@ export function scoreProduct(product, spec) {
   let sizeScore = 0.5 // neutral when we can't tell
   if (wantSize && gotSize) {
     const sim = sizeSimilarity(wantSize, gotSize)
-    if (sim === 0) return null // wrong size is a wrong product
+    // Anything below a ~25% size difference is a different product. Accepting
+    // a 2L at the 1L slot would quietly understate that store's basket.
+    if (sim < MIN_SIZE_SIMILARITY) return null
     sizeScore = sim
     reasons.push(`size:${sim}`)
   } else if (wantSize && !gotSize) {

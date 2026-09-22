@@ -32,39 +32,56 @@ in `dist/`, and `npm run lint` runs oxlint.
 - Tailwind CSS v4 for styling
 - No backend — everything runs client-side against the bundled dataset
 
-## About the price data
+## Price data
 
-⚠️ **The prices in `src/data/products.ts` are hand-curated sample/estimated
-data for demonstration purposes — they are not a live feed.** There isn't a
-public, free API for real-time South African supermarket pricing, and scraping
-retailer sites directly would need ongoing maintenance and is against most
-retailers' terms of use.
+By default the app ships with hand-curated **sample** prices in
+`src/data/products.ts`, and says so in a banner.
 
-To make this app reflect real prices, replace the contents of
-`src/data/products.ts` with real data (e.g. from a scraper you're authorized
-to run, a retailer API/partnership, or manual price checks), keeping the same
-shape:
+To use **real prices**, run the scraper:
 
-```ts
-interface Product {
-  id: string
-  name: string
-  unit: string
-  category: string
-  prices: Record<string, number | null> // storeId -> price in ZAR, or null if not stocked
-}
+```bash
+npm run scrape
 ```
 
-Store definitions (id, display name, brand color) live in `src/data/stores.ts`
-— add or remove stores there and every component picks them up automatically.
+It writes `src/data/prices.json`, which the app automatically prefers over the
+sample data, and the banner switches to showing when the scrape ran and which
+stores returned prices.
+
+| Store | Source |
+|---|---|
+| Shoprite, Checkers | schema.org JSON-LD on product pages (plain HTTP) |
+| Pick n Pay, Woolworths | rendered in headless Chromium (needs Playwright) |
+| SPAR | not available — franchise stores price independently, so there is no national catalog to scrape |
+
+Playwright is optional; without it, scrape the HTTP-only stores:
+
+```bash
+npm install --save-dev playwright && npx playwright install chromium  # for PnP + Woolworths
+npm run scrape -- --stores=shoprite,checkers                          # or skip them
+```
+
+The scraper parses and obeys each retailer's `robots.txt` (including Pick n
+Pay's crawl delay and visit window), never uses site search, rate-limits per
+host, and caches responses locally. A store it can't price gets `null` rather
+than a guessed number. See **[`scraper/README.md`](scraper/README.md)** for how
+matching works, how to tune it, and the per-retailer details.
+
+⚠️ Scraped prices are a guide, not a quote — retailer prices change often and
+vary by store and region. Check each retailer's terms before running this at
+any volume.
 
 ## Project structure
 
 ```
 src/
-  data/          product & store datasets
+  data/          products.ts (sample set), prices.json (generated), catalog.ts (merges them)
   hooks/         useBasket – basket state + localStorage persistence
   utils/         price comparison calculations
   components/    ProductCatalog, BasketPanel, ComparisonPanel, PriceBreakdownTable
   App.tsx        page layout
+scraper/
+  catalog.json   match rules: generic item -> real store products
+  src/lib/       robots.txt parsing, polite fetching, normalisation, matching
+  src/adapters/  one module per retailer
+  src/index.mjs  CLI entry point
 ```

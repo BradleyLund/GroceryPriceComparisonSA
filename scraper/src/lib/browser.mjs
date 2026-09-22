@@ -27,11 +27,21 @@ async function loadChromium() {
 export class BrowserSession {
   constructor({ headless = true, minDelayMs = 1500, logger = console } = {}) {
     this.headless = headless
+    this.baseDelayMs = minDelayMs
     this.minDelayMs = minDelayMs
     this.log = logger
     this.browser = null
     this.context = null
     this.lastRequestAt = 0
+  }
+
+  /**
+   * Page loads are requests too, so they must respect the same Crawl-delay as
+   * the HTTP fetcher. The runner calls this with the value from the store's
+   * robots.txt before handing the session to an adapter.
+   */
+  setCrawlDelay(seconds) {
+    this.minDelayMs = Math.max(this.baseDelayMs, (seconds ?? 0) * 1000)
   }
 
   async start() {

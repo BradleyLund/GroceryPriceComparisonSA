@@ -128,6 +128,15 @@ async function main() {
 
       const startedAt = Date.now()
       try {
+        // Page loads are requests too — apply the store's declared crawl delay
+        // to the browser as well as to the HTTP fetcher.
+        if (adapter.strategy === 'browser' && adapter.origin) {
+          const robots = await fetcher.getRobots(adapter.origin)
+          const delay = robots.crawlDelaySeconds
+          if (delay) log.info(`  honouring robots.txt crawl-delay of ${delay}s`)
+          browser.setCrawlDelay(delay)
+        }
+
         const byItem = await adapter.collect({
           fetcher,
           browser,

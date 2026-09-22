@@ -1,0 +1,602 @@
+{
+  "generatedAt": "2026-09-22T11:42:57.206Z",
+  "currency": "ZAR",
+  "storesScraped": [
+    "shoprite",
+    "checkers"
+  ],
+  "storeReports": {
+    "shoprite": {
+      "status": "ok",
+      "matched": 31,
+      "total": 36,
+      "durationSec": 66
+    },
+    "checkers": {
+      "status": "ok",
+      "matched": 33,
+      "total": 36,
+      "durationSec": 97
+    }
+  },
+  "items": [
+    {
+      "id": "white-bread-700g",
+      "prices": {
+        "shoprite": 19.99,
+        "checkers": 17.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Albany Superior White Bread 700g",
+          "url": "https://www.shoprite.co.za/product/albany-superior-white-bread-700g-10136301EA"
+        },
+        "checkers": {
+          "name": "The Bakery White Bread 700g",
+          "url": "https://www.checkers.co.za/product/the-bakery-white-bread-700g-10885697EA"
+        }
+      }
+    },
+    {
+      "id": "brown-bread-700g",
+      "prices": {
+        "shoprite": 16.99,
+        "checkers": 15.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Sunbake Brown Bread 700g",
+          "url": "https://www.shoprite.co.za/product/sunbake-brown-bread-700g-10136573EA"
+        },
+        "checkers": {
+          "name": "The Bakery Brown Bread 700g",
+          "url": "https://www.checkers.co.za/product/the-bakery-brown-bread-700g-10885550EA"
+        }
+      }
+    },
+    {
+      "id": "full-cream-milk-1l",
+      "prices": {
+        "shoprite": 16.99,
+        "checkers": 21.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Douglasdale Full Cream Milk 1L",
+          "url": "https://www.shoprite.co.za/product/douglasdale-full-cream-milk-1l-10144399EA"
+        },
+        "checkers": {
+          "name": "Clover Full Cream Milk 1L",
+          "url": "https://www.checkers.co.za/product/clover-full-cream-milk-1l-10392555EA"
+        }
+      }
+    },
+    {
+      "id": "low-fat-milk-2l",
+      "prices": {
+        "shoprite": null,
+        "checkers": null
+      },
+      "sources": {}
+    },
+    {
+      "id": "eggs-large-18",
+      "prices": {
+        "shoprite": null,
+        "checkers": 59.99
+      },
+      "sources": {
+        "checkers": {
+          "name": "Nulaid Large Eggs 18 Pack",
+          "url": "https://www.checkers.co.za/product/nulaid-large-eggs-18-pack-10125869EA"
+        }
+      }
+    },
+    {
+      "id": "cheddar-cheese-400g",
+      "prices": {
+        "shoprite": null,
+        "checkers": 99.99
+      },
+      "sources": {
+        "checkers": {
+          "name": "Ladismith Full Fat Cheddar Cheese 400g",
+          "url": "https://www.checkers.co.za/product/ladismith-full-fat-cheddar-cheese-400g-10518568EA"
+        }
+      }
+    },
+    {
+      "id": "butter-500g",
+      "prices": {
+        "shoprite": 79.99,
+        "checkers": 84.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Crystal Valley Salted Butter Brick 500g",
+          "url": "https://www.shoprite.co.za/product/crystal-valley-salted-butter-brick-500g-10347864EA"
+        },
+        "checkers": {
+          "name": "Darling Salted Butter 500g",
+          "url": "https://www.checkers.co.za/product/darling-salted-butter-500g-10892908EA"
+        }
+      }
+    },
+    {
+      "id": "yoghurt-1kg",
+      "prices": {
+        "shoprite": 34.99,
+        "checkers": 39.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Darling Plain Low Fat Yoghurt 1kg",
+          "url": "https://www.shoprite.co.za/product/darling-plain-low-fat-yoghurt-1kg-10701038EA"
+        },
+        "checkers": {
+          "name": "Darling Plain Low Fat Yoghurt 1kg",
+          "url": "https://www.checkers.co.za/product/darling-plain-low-fat-yoghurt-1kg-10701038EA"
+        }
+      }
+    },
+    {
+      "id": "chicken-portions-2kg",
+      "prices": {
+        "shoprite": 89.99,
+        "checkers": 64.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Farmer's Choice Individually Quick Frozen Mixed Chicken Portions 2kg",
+          "url": "https://www.shoprite.co.za/product/farmers-choice-individually-quick-frozen-mixed-chicken-portions-2kg-10130775EA"
+        },
+        "checkers": {
+          "name": "Farmer's Choice Fresh Chicken 16 Piece Braai Pack (2000g - 2300g)",
+          "url": "https://www.checkers.co.za/product/farmers-choice-fresh-chicken-16-piece-braai-pack-2000g-2300g-10732964KG"
+        }
+      }
+    },
+    {
+      "id": "beef-mince-1kg",
+      "prices": {
+        "shoprite": 109.99,
+        "checkers": 129.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Mini Beef Mince Per kg",
+          "url": "https://www.shoprite.co.za/product/mini-beef-mince-per-kg-10546453KG"
+        },
+        "checkers": {
+          "name": "Lean Beef Mince Per KG",
+          "url": "https://www.checkers.co.za/product/lean-beef-mince-per-kg-10888491KG"
+        }
+      }
+    },
+    {
+      "id": "pork-sausages-400g",
+      "prices": {
+        "shoprite": null,
+        "checkers": 79.99
+      },
+      "sources": {
+        "checkers": {
+          "name": "Eskort Jalapeño Pork Sausages 375g",
+          "url": "https://www.checkers.co.za/product/eskort-jalapeno-pork-sausages-375g-10634302EA"
+        }
+      }
+    },
+    {
+      "id": "bananas-1kg",
+      "prices": {
+        "shoprite": 39.99,
+        "checkers": 39.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Bananas 1.2kg ",
+          "url": "https://www.shoprite.co.za/product/bananas-1-2kg-10147193EA"
+        },
+        "checkers": {
+          "name": "Bananas 1.2kg ",
+          "url": "https://www.checkers.co.za/product/bananas-1-2kg-10147193EA"
+        }
+      }
+    },
+    {
+      "id": "apples-1kg",
+      "prices": {
+        "shoprite": 19.99,
+        "checkers": 32.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Granny Smith Apples 1kg",
+          "url": "https://www.shoprite.co.za/product/granny-smith-apples-1kg-10155196EA"
+        },
+        "checkers": {
+          "name": "Pink Lady™ Apples 1kg",
+          "url": "https://www.checkers.co.za/product/pink-lady-apples-1kg-10627156EA"
+        }
+      }
+    },
+    {
+      "id": "potatoes-2kg",
+      "prices": {
+        "shoprite": 29.99,
+        "checkers": 49.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Potatoes 2kg",
+          "url": "https://www.shoprite.co.za/product/potatoes-2kg-10145863EA"
+        },
+        "checkers": {
+          "name": "Boil & Roast Potatoes 2kg",
+          "url": "https://www.checkers.co.za/product/boil-and-roast-potatoes-2kg-10151278EA"
+        }
+      }
+    },
+    {
+      "id": "onions-1kg",
+      "prices": {
+        "shoprite": 29.99,
+        "checkers": 29.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Onions 1kg",
+          "url": "https://www.shoprite.co.za/product/onions-1kg-10241181EA"
+        },
+        "checkers": {
+          "name": "Pickle Onions 1kg",
+          "url": "https://www.checkers.co.za/product/pickle-onions-1kg-10135702EA"
+        }
+      }
+    },
+    {
+      "id": "tomatoes-1kg",
+      "prices": {
+        "shoprite": 19.99,
+        "checkers": 21.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Tomatoes 1kg",
+          "url": "https://www.shoprite.co.za/product/tomatoes-1kg-10151570EA"
+        },
+        "checkers": {
+          "name": "Tomatoes 1kg",
+          "url": "https://www.checkers.co.za/product/tomatoes-1kg-10145422EA"
+        }
+      }
+    },
+    {
+      "id": "rice-2kg",
+      "prices": {
+        "shoprite": 39.99,
+        "checkers": 29.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Tastic Long Grain Parboiled Rice 2kg",
+          "url": "https://www.shoprite.co.za/product/tastic-long-grain-parboiled-rice-2kg-10130258EA"
+        },
+        "checkers": {
+          "name": "Allsome Long Grain Parboiled Rice 2kg",
+          "url": "https://www.checkers.co.za/product/allsome-long-grain-parboiled-rice-2kg-10453681EA"
+        }
+      }
+    },
+    {
+      "id": "cake-flour-2-5kg",
+      "prices": {
+        "shoprite": 39.99,
+        "checkers": 29.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Snowflake Cake Wheat Flour 2.5kg",
+          "url": "https://www.shoprite.co.za/product/snowflake-cake-wheat-flour-2-5kg-10136836EA"
+        },
+        "checkers": {
+          "name": "SASKO Cake Wheat Flour Bag 2.5kg",
+          "url": "https://www.checkers.co.za/product/sasko-cake-wheat-flour-bag-2-5kg-10137552EA"
+        }
+      }
+    },
+    {
+      "id": "sugar-2kg",
+      "prices": {
+        "shoprite": 72.99,
+        "checkers": 49.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Selati Pure White Sugar Bag 2.5kg",
+          "url": "https://www.shoprite.co.za/product/selati-pure-white-sugar-bag-2-5kg-10141800EA"
+        },
+        "checkers": {
+          "name": "Sugarfields White Sugar 2kg",
+          "url": "https://www.checkers.co.za/product/sugarfields-white-sugar-2kg-10410011EA"
+        }
+      }
+    },
+    {
+      "id": "sunflower-oil-750ml",
+      "prices": {
+        "shoprite": 39.99,
+        "checkers": null
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Excella Sunflower Oil 750ml",
+          "url": "https://www.shoprite.co.za/product/excella-sunflower-oil-750ml-10129148EA"
+        }
+      }
+    },
+    {
+      "id": "salt-500g",
+      "prices": {
+        "shoprite": 12.99,
+        "checkers": 32.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Buffalo Fine Sea Salt 500g",
+          "url": "https://www.shoprite.co.za/product/buffalo-fine-sea-salt-500g-10140897EA"
+        },
+        "checkers": {
+          "name": "Cerebos Iodated Table Salt 500g",
+          "url": "https://www.checkers.co.za/product/cerebos-iodated-table-salt-500g-10133157EA"
+        }
+      }
+    },
+    {
+      "id": "spaghetti-500g",
+      "prices": {
+        "shoprite": 14.99,
+        "checkers": 16.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Ritebrand Spaghetti 500g",
+          "url": "https://www.shoprite.co.za/product/ritebrand-spaghetti-500g-10139337EA"
+        },
+        "checkers": {
+          "name": "Mr. Pasta Spaghetti 500g",
+          "url": "https://www.checkers.co.za/product/mr-pasta-spaghetti-500g-10124087EA"
+        }
+      }
+    },
+    {
+      "id": "peanut-butter-400g",
+      "prices": {
+        "shoprite": 37.99,
+        "checkers": 42.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Ritebrand Smooth Peanut Butter 400g",
+          "url": "https://www.shoprite.co.za/product/ritebrand-smooth-peanut-butter-400g-10125075EA"
+        },
+        "checkers": {
+          "name": "Thokoman Smooth Peanut Butter 400g",
+          "url": "https://www.checkers.co.za/product/thokoman-smooth-peanut-butter-400g-10644927EA"
+        }
+      }
+    },
+    {
+      "id": "baked-beans-410g",
+      "prices": {
+        "shoprite": 11.99,
+        "checkers": 11.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Homegrown Baked Beans in Tomato Sauce 410g",
+          "url": "https://www.shoprite.co.za/product/homegrown-baked-beans-in-tomato-sauce-410g-10928244EA"
+        },
+        "checkers": {
+          "name": "Homegrown Baked Beans in Tomato Sauce 410g",
+          "url": "https://www.checkers.co.za/product/homegrown-baked-beans-in-tomato-sauce-410g-10928244EA"
+        }
+      }
+    },
+    {
+      "id": "tinned-tomatoes-410g",
+      "prices": {
+        "shoprite": 27.99,
+        "checkers": 24.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Rhodes Quality Chopped & Peeled Tomatoes 410g",
+          "url": "https://www.shoprite.co.za/product/rhodes-quality-chopped-and-peeled-tomatoes-410g-10131354EA"
+        },
+        "checkers": {
+          "name": "Miami Indian Style Diced Tomatoes 410g",
+          "url": "https://www.checkers.co.za/product/miami-indian-style-diced-tomatoes-410g-10381108EA"
+        }
+      }
+    },
+    {
+      "id": "rooibos-tea-80s",
+      "prices": {
+        "shoprite": 37.99,
+        "checkers": 39.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Ritebrand Rooibos Teabags 80 Pack",
+          "url": "https://www.shoprite.co.za/product/ritebrand-rooibos-teabags-80-pack-10147433EA"
+        },
+        "checkers": {
+          "name": "Glen Rooibos Tea Bags 80 Pack",
+          "url": "https://www.checkers.co.za/product/glen-rooibos-tea-bags-80-pack-10187763EA"
+        }
+      }
+    },
+    {
+      "id": "instant-coffee-200g",
+      "prices": {
+        "shoprite": 149.99,
+        "checkers": 144.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "NESCAFÉ Classic Instant Coffee 200g",
+          "url": "https://www.shoprite.co.za/product/nescafe-classic-instant-coffee-200g-10395676EA"
+        },
+        "checkers": {
+          "name": "NESCAFÉ Classic Instant Coffee 200g",
+          "url": "https://www.checkers.co.za/product/nescafe-classic-instant-coffee-200g-10395676EA"
+        }
+      }
+    },
+    {
+      "id": "cola-2l",
+      "prices": {
+        "shoprite": 28.99,
+        "checkers": 28.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Coca-Cola Original Taste Less Sugar Soft Drink 2L",
+          "url": "https://www.shoprite.co.za/product/coca-cola-original-taste-less-sugar-soft-drink-2l-10136669EA"
+        },
+        "checkers": {
+          "name": "Coca-Cola Original Taste Less Sugar Soft Drink 2L",
+          "url": "https://www.checkers.co.za/product/coca-cola-original-taste-less-sugar-soft-drink-2l-10136669EA"
+        }
+      }
+    },
+    {
+      "id": "still-water-5l",
+      "prices": {
+        "shoprite": 31.99,
+        "checkers": 24.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "aQuellé Still Natural Spring Water 5L",
+          "url": "https://www.shoprite.co.za/product/aquelle-still-natural-spring-water-5l-10181090EA"
+        },
+        "checkers": {
+          "name": "Thirsti Still Natural Spring Water 5L",
+          "url": "https://www.checkers.co.za/product/thirsti-still-natural-spring-water-5l-10516259EA"
+        }
+      }
+    },
+    {
+      "id": "fruit-juice-1l",
+      "prices": {
+        "shoprite": 29.99,
+        "checkers": 34.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Fruitree Orange Flavoured Juice 1L",
+          "url": "https://www.shoprite.co.za/product/fruitree-orange-flavoured-juice-1l-10126922EA"
+        },
+        "checkers": {
+          "name": "Rhodes Quality 100% Apple Juice 1L",
+          "url": "https://www.checkers.co.za/product/rhodes-quality-100-apple-juice-1l-10511662EA"
+        }
+      }
+    },
+    {
+      "id": "toilet-paper-9pk",
+      "prices": {
+        "shoprite": 49.99,
+        "checkers": 69.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Ritebrand 2-Ply Mini Toilet Rolls 9 Pack",
+          "url": "https://www.shoprite.co.za/product/ritebrand-2-ply-mini-toilet-rolls-9-pack-10909278EA"
+        },
+        "checkers": {
+          "name": "Checkers Housebrand 2 Ply Toilet Paper 9-Pack",
+          "url": "https://www.checkers.co.za/product/checkers-housebrand-2-ply-toilet-paper-9-pack-10159234EA"
+        }
+      }
+    },
+    {
+      "id": "dishwashing-liquid-750ml",
+      "prices": {
+        "shoprite": 27.99,
+        "checkers": 36.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Ritebrand Lemon Dishwashing Liquid 750ml",
+          "url": "https://www.shoprite.co.za/product/ritebrand-lemon-dishwashing-liquid-750ml-10148414EA"
+        },
+        "checkers": {
+          "name": "Sunlight Original Dishwashing Liquid 750ml",
+          "url": "https://www.checkers.co.za/product/sunlight-original-dishwashing-liquid-750ml-10126901EA"
+        }
+      }
+    },
+    {
+      "id": "washing-powder-2kg",
+      "prices": {
+        "shoprite": 64.99,
+        "checkers": 62.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Surf Hand Washing Powder 2kg",
+          "url": "https://www.shoprite.co.za/product/surf-hand-washing-powder-2kg-10216662EA"
+        },
+        "checkers": {
+          "name": "Surf Hand Washing Powder 2kg",
+          "url": "https://www.checkers.co.za/product/surf-hand-washing-powder-2kg-10216662EA"
+        }
+      }
+    },
+    {
+      "id": "bar-soap-3pk",
+      "prices": {
+        "shoprite": null,
+        "checkers": null
+      },
+      "sources": {}
+    },
+    {
+      "id": "potato-chips-125g",
+      "prices": {
+        "shoprite": 18.99,
+        "checkers": 18.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Tait's Fruit Chutney Chips 125g",
+          "url": "https://www.shoprite.co.za/product/taits-fruit-chutney-chips-125g-10344644EA"
+        },
+        "checkers": {
+          "name": "Tait's Fruit Chutney Chips 125g",
+          "url": "https://www.checkers.co.za/product/taits-fruit-chutney-chips-125g-10344644EA"
+        }
+      }
+    },
+    {
+      "id": "sweet-biscuits-200g",
+      "prices": {
+        "shoprite": 15.99,
+        "checkers": 21.99
+      },
+      "sources": {
+        "shoprite": {
+          "name": "Ritebrand Marie Biscuits 200g",
+          "url": "https://www.shoprite.co.za/product/ritebrand-marie-biscuits-200g-10125076EA"
+        },
+        "checkers": {
+          "name": "Chelsea Coconut Biscuits 200g",
+          "url": "https://www.checkers.co.za/product/chelsea-coconut-biscuits-200g-10630349EA"
+        }
+      }
+    }
+  ]
+}

@@ -26,7 +26,9 @@ export function tokenize(s) {
  * SA sites use both comma and dot as the decimal separator.
  */
 export function parsePrice(input) {
-  if (typeof input === 'number') return Number.isFinite(input) ? input : null
+  // Zero is never a real price — Shoprite reports unavailable products as
+  // `price: 0`, which must not become a free item in the basket.
+  if (typeof input === 'number') return Number.isFinite(input) && input > 0 ? input : null
   if (!input) return null
   const cleaned = String(input)
     .replace(/[Rr]\s*/g, ' ')

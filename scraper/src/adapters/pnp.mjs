@@ -83,6 +83,7 @@ export const pnp = {
   id: 'pnp',
   label: 'Pick n Pay',
   strategy: 'browser',
+  origin: ORIGIN,
 
   async collect({ fetcher, browser, catalog, log, candidatesPerItem }) {
     const indexXml = await fetcher.text(`${ORIGIN}/sitemap.xml`)

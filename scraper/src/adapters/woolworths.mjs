@@ -15,42 +15,61 @@ import { normalizeText, parsePrice } from '../lib/normalize.mjs'
 
 const SITEMAP = 'https://content.woolworthsstatic.co.za/sitemap/food.xml'
 
-/** Runs inside the page. */
+/**
+ * Runs inside the page.
+ *
+ * Woolworths product tiles are not anchors — they're divs with click
+ * handlers — so there is no product link to key off. Instead this anchors on
+ * each price leaf (a bare `<strong>R 129.99</strong>`) and walks up to the
+ * smallest ancestor that also carries a product name.
+ */
 /* c8 ignore start */
 function extractGrid() {
+  const PRICE = /R\s?\d+(?:[ ,]\d{3})*[.,]\d{2}/
+  const isPriceOnly = (t) => new RegExp(`^${PRICE.source}$`).test(t)
+  const isNoise = (l) =>
+    isPriceOnly(l) ||
+    PRICE.test(l) || // promo lines like "BUY ANY 2 FOR R230"
+    /^\(\d+\)$/.test(l) || // review count
+    /^(buy|save|was|new|add|quick|out of stock|sold out)/i.test(l)
+
+  const priceLeaves = [...document.querySelectorAll('*')].filter(
+    (el) => el.children.length === 0 && isPriceOnly((el.textContent || '').trim()),
+  )
+
   const seen = new Set()
   const out = []
 
-  // Product tiles vary by template; anchor on the product link and walk up to
-  // the card that also contains a price.
-  const links = document.querySelectorAll('a[href*="/prod/"], a[href*="/p/"]')
-  for (const link of links) {
-    let card = link
-    for (let i = 0; i < 6 && card; i += 1) {
-      const text = card.innerText || ''
-      if (/R\s?\d+[.,]\d{2}/.test(text) && text.trim().length > 6) break
+  for (const leaf of priceLeaves) {
+    const priceText = (leaf.textContent || '').trim()
+    let card = leaf
+    for (let i = 0; i < 8 && card.parentElement; i += 1) {
       card = card.parentElement
+      const lines = (card.innerText || '')
+        .split('\n')
+        .map((s) => s.trim())
+        .filter(Boolean)
+
+      // More than a tile's worth of lines means we've walked up into a grid
+      // container and the "name" would belong to a different product.
+      if (lines.length > 8) break
+      if (!lines.some(isPriceOnly)) continue
+
+      const name = lines.find((l) => !isNoise(l) && l.length > 4)
+      if (!name) continue
+
+      const key = `${name}|${priceText}`
+      if (!seen.has(key)) {
+        seen.add(key)
+        out.push({
+          name,
+          priceText,
+          url: location.href,
+          soldOut: /out of stock|sold out/i.test(card.innerText || ''),
+        })
+      }
+      break
     }
-    if (!card) continue
-
-    const text = (card.innerText || '').trim()
-    const priceMatch = text.match(/R\s?\d+(?:[ ,]\d{3})*[.,]\d{2}/)
-    if (!priceMatch) continue
-
-    const name = (link.innerText || link.getAttribute('aria-label') || '').trim().split('\n')[0]
-    if (!name || name.length < 3) continue
-
-    const href = link.getAttribute('href') || ''
-    const key = `${name}|${priceMatch[0]}`
-    if (seen.has(key)) continue
-    seen.add(key)
-
-    out.push({
-      name,
-      priceText: priceMatch[0],
-      url: href.startsWith('http') ? href : `https://www.woolworths.co.za${href}`,
-      soldOut: /out of stock|sold out/i.test(text),
-    })
   }
   return out
 }
@@ -89,6 +108,7 @@ export const woolworths = {
   id: 'woolworths',
   label: 'Woolworths',
   strategy: 'browser',
+  origin: 'https://www.woolworths.co.za',
 
   async collect({ fetcher, browser, catalog, log, candidatesPerItem }) {
     const xml = await fetcher.text(SITEMAP)
