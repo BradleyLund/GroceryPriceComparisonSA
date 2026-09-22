@@ -752,9 +752,15 @@
       ],
       "exclude": [
         "aloe",
+        "chilled",
         "concentrate",
         "cordial",
+        "cranberry",
         "fresh",
+        "freshly squeezed",
+        "ginger",
+        "kosher",
+        "lemon",
         "lemon juice",
         "lime",
         "smoothie",
@@ -768,6 +774,17 @@
         "juice",
         "juices",
         "fruit-juices"
+      ],
+      "any": [
+        [
+          "orange",
+          "apple",
+          "mixed fruit",
+          "tropical",
+          "berry",
+          "mango",
+          "breakfast"
+        ]
       ]
     },
     {
