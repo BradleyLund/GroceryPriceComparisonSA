@@ -25,3 +25,6 @@ dist-ssr
 
 # Scraper artifacts
 scraper/.cache/
+
+# Playwright MCP scratch output
+.playwright-mcp/
